@@ -28,7 +28,7 @@ public class AppSlave {
 	public static void main(String[] args) throws ServletException, LifecycleException {
 
 		if (args.length == 0) {
-			System.out.println("USAGE:\n\tjava -jar tinympi4j-slave-0.1.jar {port}");
+			System.out.println("tinympi4j - a micro java offline distributed computation framework\nUSAGE:\n\tjava -jar tinympi4j-slave-0.1.jar {port}\nAUTHOR:\n\t林春宇@深圳\n\tchunyu_lin@163.com\n\thttps://github.com/binaryer/tinympi4j-slave");
 			return;
 		}
 
