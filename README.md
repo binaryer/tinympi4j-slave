@@ -8,11 +8,11 @@ mvn package assembly:single
 
 运行
 ```bash
-java -jar tinympi4j-slave-0.1.jar {port}
+java -jar tinympi4j-slave-0.2.jar {port}
 ```
 
 ```
-[root@vbox-centos7-64 ~]# java -jar tinympi4j-slave-0.1.jar 1234
+[root@vbox-centos7-64 ~]# java -jar tinympi4j-slave-0.2.jar 1234
 Apr 04, 2017 5:56:40 PM org.apache.coyote.AbstractProtocol init
 INFO: Initializing ProtocolHandler ["http-nio-1234"]
 Apr 04, 2017 5:56:41 PM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
