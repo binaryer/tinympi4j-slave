@@ -19,6 +19,7 @@ import org.apache.commons.lang3.SerializationUtils;
 
 import jodd.http.HttpRequest;
 import jodd.util.ClassLoaderUtil;
+import jodd.util.SystemUtil;
 import lcy.tinympi4j.common.SplitableTask;
 
 public class AppSlave {
@@ -32,6 +33,11 @@ public class AppSlave {
 			return;
 		}
 
+		//fixed slow SessionIdGeneratorBase.createSecureRandom
+		if(SystemUtil.isHostLinux())
+			System.setProperty("java.security.egd", "file:/dev/./urandom");
+		
+		
 		final Tomcat tomcat = new Tomcat();
 		tomcat.setPort(Integer.valueOf(args[0]));
 		tomcat.setBaseDir(System.getProperty("java.io.tmpdir"));  
