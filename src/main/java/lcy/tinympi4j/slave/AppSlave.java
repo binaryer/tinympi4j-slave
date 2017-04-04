@@ -1,5 +1,6 @@
 package lcy.tinympi4j.slave;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
 import java.io.Writer;
@@ -19,7 +20,6 @@ import org.apache.commons.lang3.SerializationUtils;
 
 import jodd.http.HttpRequest;
 import jodd.util.ClassLoaderUtil;
-import jodd.util.SystemUtil;
 import lcy.tinympi4j.common.SplitableTask;
 
 public class AppSlave {
@@ -34,7 +34,7 @@ public class AppSlave {
 		}
 
 		//fixed slow SessionIdGeneratorBase.createSecureRandom
-		if(SystemUtil.isHostLinux())
+		if(new File("/dev/./urandom").exists())
 			System.setProperty("java.security.egd", "file:/dev/./urandom");
 		
 		
